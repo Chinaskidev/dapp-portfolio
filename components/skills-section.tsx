@@ -9,11 +9,6 @@ export function SkillsSection() {
       description: "Modelos predictivos, clasificación, regresión y clustering con scikit-learn, XGBoost",
     },
     {
-      icon: Network,
-      title: "Deep Learning",
-      description: "Redes neuronales, CNN, RNN, Transformers con TensorFlow y PyTorch",
-    },
-    {
       icon: LineChart,
       title: "Análisis de Datos",
       description: "Visualización y análisis estadístico con Pandas, NumPy, Matplotlib, Seaborn",
@@ -21,12 +16,12 @@ export function SkillsSection() {
     {
       icon: Code,
       title: "Desarrollo Full-Stack",
-      description: "React, Next.js, Node.js, TypeScript, Python, FastAPI",
+      description: "React, Next.js, Nest.js, TypeScript, Python, FastAPI, Prisma",
     },
     {
       icon: Database,
       title: "Bases de Datos",
-      description: "SQL, PostgreSQL, MongoDB, Redis, diseño de esquemas y optimización",
+      description: "SQL, PostgreSQL, diseño de esquemas y optimización",
     },
     {
       icon: Cpu,

@@ -5,13 +5,14 @@ import { ExternalLink, Github } from "lucide-react"
 export function ProjectsSection() {
   const projects = [
     {
-      title: "Sistema de Recomendación ML",
+      title: "SKINNER",
       description:
-        "Motor de recomendaciones basado en filtrado colaborativo y deep learning para e-commerce. Incrementó conversiones en 35%.",
-      tags: ["Python", "TensorFlow", "FastAPI", "Redis"],
-      image: "/machine-learning-recommendation-system-dashboard.jpg",
-      github: "#",
-      demo: "#",
+        "Software de gestión administrativa inteligente que combina IA avanzada con gestión de talento humano. Optimiza procesos administrativos y fortalece la infraestructura tecnológica de las organizaciones.",
+      tags: ["Python", "Transformer", "FastAPI", "Docker"],
+      image: "/skinner-logo.png",
+      imageContain: true,
+      github: "https://github.com/Skinner-SAS-de-CV",
+      demo: "https://www.skinnersv.net/companies",
     },
     {
       title: "Análisis Predictivo de Series Temporales",
@@ -79,7 +80,9 @@ export function ProjectsSection() {
                     <img
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className={`w-full h-full group-hover:scale-105 transition-transform duration-300 ${
+                        project.imageContain ? "object-contain p-4" : "object-cover"
+                      }`}
                     />
                   </div>
                 </CardHeader>

@@ -91,7 +91,7 @@ export function HeroSection() {
                   done ? "opacity-100" : "opacity-0"
                 }`}
               >
-                Especializado en Machine Learning, Deep Learning y desarrollo de software. Creando sistemas que aprenden,
+                Especializado en Machine Learning y desarrollo de software. Creando sistemas que aprenden,
                 predicen y optimizan procesos complejos.
               </p>
             </div>
@@ -109,7 +109,7 @@ export function HeroSection() {
 
           <div className="flex items-center justify-center gap-6 pt-8">
             <a
-              href="https://github.com"
+              href="https://github.com/Chinaskidev"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -118,7 +118,7 @@ export function HeroSection() {
               <Github className="h-6 w-6" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/juancarlosvz/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -127,7 +127,7 @@ export function HeroSection() {
               <Linkedin className="h-6 w-6" />
             </a>
             <a
-              href="mailto:contact@example.com"
+              href="mailto:hello@yultic.dev"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Email"
             >
