@@ -5,29 +5,39 @@ import Image from "next/image"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
-      <div className="max-w-6xl xl:max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 relative overflow-hidden">
+      {/* Gradient mesh background */}
+      <div className="absolute inset-0 gradient-mesh opacity-40 pointer-events-none" />
+
+      <div className="max-w-6xl xl:max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center relative z-10">
         {/* Photo Section */}
-        <div className="w-full flex justify-center md:justify-end order-1 md:order-2 md:self-start md:pt-8 lg:pt-12">
+        <div className="w-full flex justify-center md:justify-end order-1 md:order-2 md:self-start md:pt-8 lg:pt-12"
+          style={{ animation: "slide-in-right 0.8s cubic-bezier(0.22, 1, 0.36, 1) both 0.2s" }}
+        >
           <div className="relative w-[250px] sm:w-[300px] md:w-[320px] lg:w-[380px] xl:w-[420px]">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/25 to-accent/25 rounded-2xl blur-2xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-gold/25 to-accent/15 rounded-2xl blur-2xl" />
             <Image
               src="/yo.jpeg"
               alt="Juan Carlos Vásquez"
               width={500}
               height={500}
-              className="relative w-full rounded-2xl aspect-square object-cover border border-border/50 shadow-2xl"
+              className="relative w-full rounded-2xl aspect-square object-cover border border-gold/20 shadow-2xl"
               priority
             />
+            {/* Decorative corner accents */}
+            <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-gold/40 rounded-tl-lg" />
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-gold/40 rounded-br-lg" />
           </div>
         </div>
 
         {/* Content Section */}
-        <div className="space-y-6 sm:space-y-8 order-2 md:order-1 text-center md:text-left">
+        <div className="space-y-6 sm:space-y-8 order-2 md:order-1 text-center md:text-left"
+          style={{ animation: "slide-in-left 0.8s cubic-bezier(0.22, 1, 0.36, 1) both" }}
+        >
           <div className="space-y-3 sm:space-y-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-balance leading-tight">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-balance leading-tight tracking-tight">
               Hola, soy{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="gold-shimmer">
                 Juan Carlos Vásquez
               </span>
             </h1>
@@ -42,7 +52,7 @@ export default function Home() {
               convertir ideas ambiciosas en productos reales y funcionales.
             </p>
 
-            <div className="pl-3 sm:pl-4 border-l-2 border-primary/50 space-y-3 sm:space-y-4">
+            <div className="pl-3 sm:pl-4 border-l-2 border-gold/40 space-y-3 sm:space-y-4">
               <div className="flex gap-2 sm:gap-3">
                 <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-primary mt-1 flex-shrink-0" />
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-pretty">
@@ -65,7 +75,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="pl-3 sm:pl-4 border-l-2 border-primary/50 space-y-3 sm:space-y-4">
+            <div className="pl-3 sm:pl-4 border-l-2 border-gold/40 space-y-3 sm:space-y-4">
               <div className="flex gap-2 sm:gap-3">
                 <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-primary mt-1 flex-shrink-0" />
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-pretty">
@@ -88,13 +98,13 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6 justify-center md:justify-start">
-            <Button asChild size="lg" className="group text-sm sm:text-base w-full sm:w-auto">
+            <Button asChild size="lg" className="group text-sm sm:text-base w-full sm:w-auto tracking-wide">
               <Link href="/portfolio">
                 Ver mi Portfolio
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="text-sm sm:text-base bg-transparent w-full sm:w-auto">
+            <Button asChild size="lg" variant="outline" className="text-sm sm:text-base bg-transparent border-gold/30 hover:border-gold/60 hover:bg-gold/5 w-full sm:w-auto">
               <Link href="/portfolio#contact">Contacto</Link>
             </Button>
           </div>
@@ -103,4 +113,3 @@ export default function Home() {
     </div>
   )
 }
-

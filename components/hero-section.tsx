@@ -13,19 +13,15 @@ export function HeroSection() {
   const [done, setDone] = useState(false)
   const [caretVisible, setCaretVisible] = useState(true)
 
-  // Video de fondo detrás del texto (Cloudinary)
   const videoSrc =
     "https://res.cloudinary.com/dop4qm8ku/video/upload/f_auto,q_auto:eco,vc_auto/6994107_Generative_Ai_Computer_Hacker_3840x2160_gbb8rb.mp4"
 
   useEffect(() => {
-    const speed = 100 // ms por carácter
-
-    // Declaramos caretId con let para poder limpiarlo desde el callback cuando termine
+    const speed = 100
     const id = window.setInterval(() => {
       setI((prev) => {
         const next = Math.min(prev + 1, full.length)
         if (next === full.length) {
-          // Cuando llega al final, limpiamos ambos intervalos y mostramos el caret fijo
           window.clearInterval(id)
           window.clearInterval(caretId)
           setCaretVisible(true)
@@ -43,102 +39,127 @@ export function HeroSection() {
     }
   }, [full.length])
 
-  // Asegurar que el video arranque desde el inicio al montarse
   const videoRef = useRef<HTMLVideoElement | null>(null)
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
-    // Reiniciar al inicio y forzar reproducción (silenciado para permitir autoplay)
     try {
       v.currentTime = 0
       const p = v.play()
       if (p && typeof p.then === "function") p.catch(() => {})
-    } catch (e) {
+    } catch {
       // ignore
     }
   }, [])
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-50 px-12 sm:px-6 lg:px-8">
-      <div className="container mx-auto">
-        <div className="max-w-8xl mx-2 text-center space-y-2 relative">
-          <div className="space-y-4 relative">
-            <div aria-hidden className="absolute inset-x-0 top-0 h-[22rem] sm:h-[22rem] md:h-[24rem] lg:h-[26rem] z-0 pointer-events-none overflow-hidden rounded-xl">
-              <video
-                ref={videoRef}
-                src={videoSrc}
-                preload="auto"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="block w-full h-full object-cover opacity-35 scale-110 sm:scale-125"
-              />
-            </div>
+    <section id="home" className="min-h-screen flex items-center pt-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Gradient mesh background */}
+      <div className="absolute inset-0 gradient-mesh opacity-50 pointer-events-none" />
 
-            <div className="relative z-10 space-y-4">
-              <div className="relative flex flex-col items-center justify-center min-h-[22rem] sm:min-h-[22rem] md:min-h-[24rem] lg:min-h-[26rem]">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-balance leading-tight pt-6">
+      <div className="container mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-0 items-center">
+          {/* Left: Text content (60%) */}
+          <div className="space-y-8 lg:pr-12 max-w-2xl" style={{ animation: "slide-in-left 0.8s cubic-bezier(0.22, 1, 0.36, 1) both" }}>
+            <div className="space-y-6">
+              {/* Video container behind typewriter */}
+              <div className="relative">
+                <div aria-hidden className="absolute inset-0 -m-4 overflow-hidden rounded-xl pointer-events-none">
+                  <video
+                    ref={videoRef}
+                    src={videoSrc}
+                    preload="auto"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="block w-full h-full object-cover opacity-20 mix-blend-luminosity scale-110"
+                  />
+                </div>
+
+                <h1 className="relative font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight py-8">
                   <span>{part1.slice(0, Math.min(i, part1.length))}</span>
-                  <span className="text-primary">{part2.slice(0, Math.max(0, i - part1.length))}</span>
-                  <span aria-hidden="true" className="ml-1 align-baseline">
-                    {caretVisible ? "" : " "}
+                  <span className="gold-shimmer">{part2.slice(0, Math.max(0, i - part1.length))}</span>
+                  <span aria-hidden="true" className="ml-1 align-baseline text-primary">
+                    {caretVisible ? "|" : " "}
                   </span>
                 </h1>
               </div>
+
               <p
-                className={`text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed transition-opacity duration-1500 pt-18 ${
-                  done ? "opacity-100" : "opacity-0"
+                className={`text-lg sm:text-xl text-muted-foreground max-w-xl text-pretty leading-relaxed transition-all duration-1000 ${
+                  done ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
               >
                 Especializado en Machine Learning y desarrollo de software. Creando sistemas que aprenden,
                 predicen y optimizan procesos complejos.
               </p>
             </div>
+
+            <div
+              className={`flex flex-col sm:flex-row items-start gap-4 transition-all duration-1000 delay-200 ${
+                done ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 group tracking-wide">
+                Ver Proyectos
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button size="lg" variant="outline" className="bg-transparent border-gold/30 hover:border-gold/60 hover:bg-gold/5">
+                Contactar
+              </Button>
+            </div>
+
+            <div
+              className={`flex items-center gap-6 transition-all duration-1000 delay-400 ${
+                done ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              <a
+                href="https://github.com/Chinaskidev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/juancarlosvz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href="mailto:hello@yultic.dev"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Email"
+              >
+                <Mail className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-10">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 group">
-              Ver Proyectos
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button size="lg" variant="outline" className="bg-secondary">
-              Contactar
-            </Button>
+          {/* Center: Golden decorative line */}
+          <div className="hidden lg:flex flex-col items-center gap-3 mx-8" style={{ animation: "fade-in 1.2s ease both 0.4s" }}>
+            <div className="w-px h-32 bg-gradient-to-b from-transparent via-gold to-transparent" />
+            <div className="w-2 h-2 rounded-full bg-gold" />
+            <div className="w-px h-32 bg-gradient-to-b from-transparent via-gold to-transparent" />
           </div>
 
-          <div className="flex items-center justify-center gap-6 pt-8">
-            <a
-              href="https://github.com/Chinaskidev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="GitHub"
-            >
-              <Github className="h-6 w-6" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/juancarlosvz/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="h-6 w-6" />
-            </a>
-            <a
-              href="mailto:hello@yultic.dev"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Email"
-            >
-              <Mail className="h-6 w-6" />
-            </a>
-          </div>
-
-          {/* Decorative AI Pattern */}
-          <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+          {/* Right: Decorative element */}
+          <div className="hidden lg:flex items-center justify-center" style={{ animation: "slide-in-right 0.8s cubic-bezier(0.22, 1, 0.36, 1) both 0.2s" }}>
+            <div className="relative w-80 h-80">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gold/20 via-transparent to-accent/10 blur-2xl" />
+              <div className="absolute inset-8 rounded-full border border-gold/20" />
+              <div className="absolute inset-16 rounded-full border border-gold/10" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="font-display text-8xl text-primary/20 select-none">&lt;/&gt;</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

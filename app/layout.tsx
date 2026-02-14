@@ -1,16 +1,25 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Playfair_Display, DM_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-display-family",
+  display: "swap",
+})
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: "Portfolio - Científico de Datos & Desarrollador",
   description: "Portfolio profesional de ciencia de datos, machine learning y desarrollo de software",
-  generator: "v0.app",
+  generator: "yultic.v.0",
 }
 
 export default function RootLayout({
@@ -27,7 +36,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${_geist.className} ${_geistMono.className} font-sans antialiased`}>
+      <body className={`${playfair.variable} ${dmSans.variable} font-sans antialiased grain-overlay`}>
         {children}
         <Analytics />
       </body>
