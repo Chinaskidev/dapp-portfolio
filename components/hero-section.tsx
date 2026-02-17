@@ -91,8 +91,8 @@ export function HeroSection() {
                   done ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
               >
-                Especializado en Machine Learning y desarrollo de software. Creando sistemas que aprenden,
-                predicen y optimizan procesos complejos.
+                Soy Desarrollador Full-Stack con especialización en Blockchain y capacidades avanzadas en Ciencia de Datos.
+                Combino ingeniería de software, arquitecturas Web3 y análisis de datos para construir productos escalables.
               </p>
             </div>
 
@@ -101,13 +101,17 @@ export function HeroSection() {
                 done ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 group tracking-wide">
-                Ver Proyectos
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-gold/30 hover:border-gold/60 hover:bg-gold/5">
-                Contactar
-              </Button>
+              <a href="https://github.com/Chinaskidev" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 group tracking-wide">
+                  Ver Proyectos
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
+              <a href="mailto:hello@yultic.dev">
+                <Button size="lg" variant="outline" className="bg-transparent border-gold/30 hover:border-gold/60 hover:bg-gold/5">
+                  Contactar
+                </Button>
+              </a>
             </div>
 
             <div

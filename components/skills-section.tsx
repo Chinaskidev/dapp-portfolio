@@ -48,9 +48,6 @@ export function SkillsSection() {
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-balance tracking-tight">
               Habilidades & Tecnologías
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-              Experiencia en el stack completo de ciencia de datos y desarrollo de software
-            </p>
           </div>
 
           {/* Bento grid */}

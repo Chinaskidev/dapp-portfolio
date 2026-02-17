@@ -1,46 +1,51 @@
-"use client"
+"use client";
 
-import { Briefcase, GraduationCap } from "lucide-react"
-import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { Briefcase, GraduationCap } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export function ExperienceSection() {
-  const sectionRef = useScrollAnimation()
+  const sectionRef = useScrollAnimation();
 
   const experiences = [
     {
       type: "work",
-      title: "Senior Data Scientist",
-      company: "Tech Innovation Labs",
-      period: "2022 - Presente",
+      title: "Co-Founder & AI Product Engineer",
+      company: "Skinner",
+      period: "2025 - Presente",
       description:
-        "Liderazgo de proyectos de ML/AI, desarrollo de modelos predictivos y sistemas de recomendación. Implementación de pipelines MLOps.",
+        "Co-fundador de una plataforma tecnológica enfocada en análisis inteligente de CVs y optimización de procesos de reclutamiento. Lidero la arquitectura full-stack, integración de NLP, backend en Python (FastAPI) y desarrollo frontend en TypeScript.",
     },
     {
       type: "work",
-      title: "Machine Learning Engineer",
-      company: "DataCorp Solutions",
-      period: "2020 - 2022",
+      title: "Founder & Software Architect",
+      company: "Yultic.dev",
+      period: "2025 - Presente",
       description:
-        "Desarrollo y despliegue de modelos de deep learning. Optimización de algoritmos y arquitecturas de redes neuronales.",
+        "Fundador de un estudio de desarrollo enfocado en productos digitales y soluciones inteligentes. Diseño arquitecturas escalables, desarrollo aplicaciones full-stack e implemento soluciones basadas en inteligencia artificial.",
     },
     {
       type: "education",
-      title: "Maestría en Ciencia de Datos",
-      company: "Universidad Tecnológica",
-      period: "2018 - 2020",
-      description: "Especialización en Machine Learning, Deep Learning y Big Data Analytics.",
+      title: "Especialización Independiente en Ingeniería de Software & IA",
+      company: "Aprendizaje independiente y proyectos reales",
+      period: "Aprendizaje continuo",
+      description:
+        "Especialización práctica en Python, TypeScript, Blockchain, NLP y arquitecturas modernas mediante construcción de productos reales y despliegue en producción.",
     },
     {
       type: "education",
-      title: "Ingeniería en Sistemas",
-      company: "Universidad Nacional",
-      period: "2014 - 2018",
-      description: "Fundamentos de programación, algoritmos, estructuras de datos y desarrollo de software.",
-    },
-  ]
+      title: "Ingeniería en Agroecología",
+      company: "Universidad Luterana Salvadoreña",
+      period: "Estudios Universitarios",
+      description:
+        "Formación universitaria con enfoque en pensamiento sistémico, análisis técnico y resolución estructurada de problemas.",
+    }
+  ];
 
   return (
-    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 relative">
+    <section
+      id="experience"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 relative"
+    >
       <div className="container mx-auto" ref={sectionRef}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center space-y-4 mb-16 animate-on-scroll">
@@ -59,7 +64,7 @@ export function ExperienceSection() {
 
             <div className="space-y-12">
               {experiences.map((exp, index) => {
-                const isLeft = index % 2 === 0
+                const isLeft = index % 2 === 0;
 
                 return (
                   <div
@@ -70,10 +75,14 @@ export function ExperienceSection() {
                     <div className="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-gold border-2 border-background -translate-x-1/2 top-7 md:top-1/2 md:-translate-y-1/2 z-10" />
 
                     {/* Content - alternating sides on desktop */}
-                    <div className={`ml-14 md:ml-0 md:w-1/2 ${isLeft ? "md:pr-12 md:text-right" : "md:pl-12 md:ml-auto"}`}>
+                    <div
+                      className={`ml-14 md:ml-0 md:w-1/2 ${isLeft ? "md:pr-12 md:text-right" : "md:pl-12 md:ml-auto"}`}
+                    >
                       <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-6 hover:border-gold/30 transition-colors duration-500">
                         <div className="flex items-start gap-4">
-                          <div className={`flex-shrink-0 ${isLeft ? "md:order-2" : ""}`}>
+                          <div
+                            className={`flex-shrink-0 ${isLeft ? "md:order-2" : ""}`}
+                          >
                             <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center">
                               {exp.type === "work" ? (
                                 <Briefcase className="h-5 w-5 text-primary" />
@@ -82,24 +91,32 @@ export function ExperienceSection() {
                               )}
                             </div>
                           </div>
-                          <div className={`flex-1 space-y-2 ${isLeft ? "md:text-right" : ""}`}>
-                            <h3 className="font-display text-lg font-semibold tracking-tight">{exp.title}</h3>
-                            <p className="text-primary text-sm font-medium">{exp.company}</p>
+                          <div
+                            className={`flex-1 space-y-2 ${isLeft ? "md:text-right" : ""}`}
+                          >
+                            <h3 className="font-display text-lg font-semibold tracking-tight">
+                              {exp.title}
+                            </h3>
+                            <p className="text-primary text-sm font-medium">
+                              {exp.company}
+                            </p>
                             <span className="inline-block text-xs font-mono tracking-wide text-muted-foreground border border-gold/20 px-2 py-0.5 rounded-full">
                               {exp.period}
                             </span>
-                            <p className="text-sm text-muted-foreground leading-relaxed pt-1">{exp.description}</p>
+                            <p className="text-sm text-muted-foreground leading-relaxed pt-1">
+                              {exp.description}
+                            </p>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

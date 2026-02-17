@@ -14,7 +14,7 @@ export function Footer() {
                 <span className="text-muted-foreground font-light">.Eth</span>
               </h3>
               <p className="text-muted-foreground leading-relaxed max-w-sm">
-                Científico de Datos y Desarrollador especializado en Machine Learning y soluciones de IA.
+                Constructor de productos digitales en la intersección entre Inteligencia Artificial, datos y Web3.
               </p>
             </div>
 
@@ -56,7 +56,7 @@ export function Footer() {
           <div className="h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent mb-8" />
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground">© 2025 jcarlov.Eth — Todos los derechos reservados.</p>
+            <p className="text-sm text-muted-foreground">© 2026 jcarlov.Eth — Todos los derechos reservados.</p>
             <div className="flex items-center gap-5">
               <a
                 href="https://github.com/Chinaskidev"

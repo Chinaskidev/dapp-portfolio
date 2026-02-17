@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { ConnectButton } from "@rainbow-me/rainbowkit"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -19,7 +19,7 @@ export function Navbar() {
   }, [])
 
   const navItems = [
-    { label: "Inicio", href: "#home" },
+    { label: "Inicio", href: "/" },
     { label: "Habilidades", href: "#skills" },
     { label: "Proyectos", href: "#projects" },
     { label: "Experiencia", href: "#experience" },
@@ -53,9 +53,7 @@ export function Navbar() {
               </a>
             ))}
             <ThemeToggle />
-            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 tracking-wide uppercase text-xs">
-              Descargar CV
-            </Button>
+            <ConnectButton accountStatus="avatar" chainStatus="icon" showBalance={false} />
           </div>
 
           {/* Mobile Menu Button */}
@@ -85,9 +83,7 @@ export function Navbar() {
               <div className="flex justify-end">
                 <ThemeToggle />
               </div>
-              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 w-full tracking-wide uppercase text-xs">
-                Descargar CV
-              </Button>
+              <ConnectButton accountStatus="avatar" chainStatus="icon" showBalance={false} />
             </div>
           </div>
         )}
