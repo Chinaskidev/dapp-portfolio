@@ -9,6 +9,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit"
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const hasWalletConnect = Boolean(process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +36,7 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18">
+        <div className="flex items-center justify-between h-[72px]">
           <Link href="/" className="font-display text-2xl tracking-tight text-foreground">
             <span className="text-primary">jcarlov</span>
             <span className="text-muted-foreground font-light">.Eth</span>
@@ -53,7 +54,9 @@ export function Navbar() {
               </a>
             ))}
             <ThemeToggle />
-            <ConnectButton accountStatus="avatar" chainStatus="icon" showBalance={false} />
+            {hasWalletConnect ? (
+              <ConnectButton accountStatus="avatar" chainStatus="icon" showBalance={false} />
+            ) : null}
           </div>
 
           {/* Mobile Menu Button */}
@@ -83,7 +86,9 @@ export function Navbar() {
               <div className="flex justify-end">
                 <ThemeToggle />
               </div>
-              <ConnectButton accountStatus="avatar" chainStatus="icon" showBalance={false} />
+              {hasWalletConnect ? (
+                <ConnectButton accountStatus="avatar" chainStatus="icon" showBalance={false} />
+              ) : null}
             </div>
           </div>
         )}

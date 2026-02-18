@@ -94,6 +94,7 @@ export function ProjectsSection() {
                       <img
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
+                        loading="lazy"
                         className={`w-full aspect-video group-hover:scale-105 transition-transform duration-700 ${
                           project.imageContain ? "object-contain p-6" : "object-cover"
                         }`}
@@ -149,6 +150,7 @@ export function ProjectsSection() {
                       <img
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                     </div>
