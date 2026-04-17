@@ -14,7 +14,7 @@ export function ProjectsSection() {
       description:
         "Software de gestión administrativa inteligente que combina IA avanzada con gestión de talento humano. Optimiza procesos administrativos y fortalece la infraestructura tecnológica de las organizaciones.",
       tags: ["Python", "Transformer", "FastAPI", "Docker", "Nest.js", "Next.js", "Prisma", "Tailwind.css"],
-      image: "/skinner-logo.png",
+      image: "skinner-logo.png",
       imageContain: true,
       github: "https://github.com/Skinner-SAS-de-CV",
       demo: "https://www.skinnersv.net/companies",
@@ -24,7 +24,7 @@ export function ProjectsSection() {
       description:
         "Desarrollé un sistema inteligente de predicción de ventas orientado a pequeños y medianos negocios del sector Alimento para mascotas, diseñado para transformar datos históricos en decisiones comerciales accionables. El modelo principal, basado en XGBoost para series temporales, alcanza aproximadamente un 77 % de precisión (R²).",
       tags: ["Python", "FastAPI", "MLflow", "Docker", "XGBoost"],
-      image: "/petshop.jpg",
+      image: "petshop.jpg",
       github: "https://github.com/yultic",
       demo: "https://petshop-dashboard-lilac.vercel.app/",
     },
@@ -33,7 +33,7 @@ export function ProjectsSection() {
       description:
         "Pipeline ETL completo de datos meteorológicos que automatiza la extracción, transformación y carga de información del clima para El Salvador usando Apache Airflow, Docker y Google Cloud.",
       tags: ["Apache Airflow", "Python", "Google Cloud Storage", "PostgreSQL", "OpenWeatherMap API"],
-      image: "/lluvias.jpg",
+      image: "lluvias.jpg",
       github: "https://github.com/Chinaskidev/ETL-Clima-ElSalvador",
       demo: "https://github.com/Chinaskidev/ETL-Clima-ElSalvador",
     },
@@ -42,7 +42,7 @@ export function ProjectsSection() {
       description:
         "Desarrollé un agente de IA basado en ElizaOS, diseñado para operar en X (Twitter) y generar conversaciones especializadas sobre Blockchain y Web3.",
       tags: ["TypeScript", "PLpgSQL (para base de datos)", "Shell", "Docker"],
-      image: "/eliza_banner.jpg",
+      image: "eliza_banner.jpg",
       github: "https://github.com/Chinaskidev/Agente-en-X-ElizaOs",
       demo: "https://github.com/Chinaskidev/Agente-en-X-ElizaOs",
     },
@@ -50,7 +50,7 @@ export function ProjectsSection() {
       title: "Dapp-SivarETH",
       description: "Es un proyecto que integra contratos inteligentes Ethereum con una interfaz web, para crear y gestionar NFTs (Tokens No Fungibles) y una Integración con Wagmi - Librería web3 para conectar wallets.",
       tags: ["Next.js", "TypeScript", "Solidity", "IPFS"],
-      image: "/sivar.png",
+      image: "sivar.png",
       github: "https://github.com/Chinaskidev/Sivar-ETH",
       demo: "https://github.com/Chinaskidev/Sivar-ETH",
     },
@@ -58,7 +58,7 @@ export function ProjectsSection() {
       title: "Sitio web profesional y moderno",
       description: "Plataforma web moderna enfocada en digitalizar y posicionar un negocio de apicultura.Permite presentar información institucional, catálogo de productos y servicios, con una arquitectura frontend limpia y orientada a escalabilidad",
       tags: ["TypeScript", "Tailwind CSS", "shadcn/ui", "ESLint"],
-      image: "/raymapu2.png",
+      image: "raymapu2.png",
       github: "https://github.com/yultic/Raymapu-web",
       demo: "https://raymapu-web.vercel.app/",
     },
@@ -92,7 +92,7 @@ export function ProjectsSection() {
                     <div className={`relative overflow-hidden rounded-xl bg-muted group ${isReversed ? "lg:order-2" : ""}`}>
                       <div className="absolute inset-0 bg-gradient-to-t from-gold/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                       <img
-                        src={project.image || "/placeholder.svg"}
+                        src={project.image || "placeholder.svg"}
                         alt={project.title}
                         loading="lazy"
                         className={`w-full aspect-video group-hover:scale-105 transition-transform duration-700 ${
@@ -148,7 +148,7 @@ export function ProjectsSection() {
                     <div className="relative overflow-hidden aspect-video bg-muted">
                       <div className="absolute inset-0 bg-gradient-to-t from-gold/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                       <img
-                        src={project.image || "/placeholder.svg"}
+                        src={project.image || "placeholder.svg"}
                         alt={project.title}
                         loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

@@ -17,7 +17,7 @@ export default function Home() {
           <div className="relative w-[250px] sm:w-[300px] md:w-[320px] lg:w-[380px] xl:w-[420px]">
             <div className="absolute inset-0 bg-gradient-to-br from-gold/25 to-accent/15 rounded-2xl blur-2xl" />
             <Image
-              src="/yo.jpeg"
+              src="yo.jpeg"
               alt="Juan Carlos Vásquez"
               width={500}
               height={500}
