@@ -11,7 +11,7 @@ export function ExperienceSection() {
       type: "work",
       title: "Co-Founder & AI Product Engineer",
       company: "Skinner",
-      period: "2025 - Presente",
+      period: "2026 - Presente",
       description:
         "Co-fundador de una plataforma tecnológica enfocada en análisis inteligente de CVs y optimización de procesos de reclutamiento. Lidero la arquitectura full-stack, integración de NLP, backend en Python (FastAPI) y desarrollo frontend en TypeScript.",
     },
@@ -19,7 +19,7 @@ export function ExperienceSection() {
       type: "work",
       title: "Founder & Software Architect",
       company: "Yultic.dev",
-      period: "2025 - Presente",
+      period: "2026 - Presente",
       description:
         "Fundador de un estudio de desarrollo enfocado en productos digitales y soluciones inteligentes. Diseño arquitecturas escalables, desarrollo aplicaciones full-stack e implemento soluciones basadas en inteligencia artificial.",
     },

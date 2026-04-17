@@ -48,7 +48,7 @@ export default function Home() {
 
           <div className="space-y-4 sm:space-y-6 text-foreground/90 text-left">
             <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-pretty">
-              Aunque solo llevo dos años inmerso de lleno en el desarrollo full-time, mi trayectoria se ha centrado en
+              Aunque solo llevo tres años inmerso de lleno en el desarrollo full-time, mi trayectoria se ha centrado en
               convertir ideas ambiciosas en productos reales y funcionales.
             </p>
 
