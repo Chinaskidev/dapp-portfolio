@@ -44,15 +44,19 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-10">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="editorial-link text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors uppercase"
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const linkClass =
+                "editorial-link text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors uppercase"
+              return item.href.startsWith("#") ? (
+                <a key={item.label} href={item.href} className={linkClass}>
+                  {item.label}
+                </a>
+              ) : (
+                <Link key={item.label} href={item.href} className={linkClass}>
+                  {item.label}
+                </Link>
+              )
+            })}
             <ThemeToggle />
             {hasWalletConnect ? (
               <ConnectButton accountStatus="avatar" chainStatus="icon" showBalance={false} />
@@ -73,16 +77,29 @@ export function Navbar() {
         {isMobileMenuOpen && (
           <div className="md:hidden py-6 border-t border-gold/10">
             <div className="flex flex-col gap-5">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="editorial-link text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors uppercase w-fit"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navItems.map((item) => {
+                const linkClass =
+                  "editorial-link text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors uppercase w-fit"
+                return item.href.startsWith("#") ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className={linkClass}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={linkClass}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              })}
               <div className="flex justify-end">
                 <ThemeToggle />
               </div>

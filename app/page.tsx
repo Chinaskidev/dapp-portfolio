@@ -56,21 +56,18 @@ export default function Home() {
               <div className="flex gap-2 sm:gap-3">
                 <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-primary mt-1 flex-shrink-0" />
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-pretty">
-                  Soy co-fundador de <span className="font-semibold text-foreground">Skinner</span>, una startup que
-                  busca optimizar los procesos del Talento Humano a través de la Inteligencia Artificial.
+                  Actualmente dedico toda mi energía a <span className="font-semibold text-foreground">Yultic</span>,
+                  la consultora de desarrollo de software que fundé, enfocada en pequeñas y medianas empresas que
+                  necesitan tecnología funcional.
                 </p>
               </div>
 
               <div className="flex gap-2 sm:gap-3">
                 <Code2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent mt-1 flex-shrink-0" />
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-pretty">
-                  Este proyecto ha sido mi campo de entrenamiento más sólido, donde he trabajado con tecnologías
-                  full-stack robustas como <span className="font-medium text-foreground">Nest.js</span>,
-                  <span className="font-medium text-foreground"> Python</span>,
-                  <span className="font-medium text-foreground"> FastApi</span>,
-                  <span className="font-medium text-foreground"> TypeScript</span> y
-                  <span className="font-medium text-foreground"> Prisma</span> para el backend, y
-                  <span className="font-medium text-foreground"> Next.js</span> para el frontend.
+                  En Yultic diseñamos y construimos soluciones tecnológicas a medida —desde automatización
+                  inteligente con IA hasta plataformas SaaS— que reemplazan procesos manuales ineficientes y
+                  ayudan a los negocios a crecer.
                 </p>
               </div>
             </div>
@@ -79,22 +76,31 @@ export default function Home() {
               <div className="flex gap-2 sm:gap-3">
                 <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-primary mt-1 flex-shrink-0" />
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-pretty">
-                  También soy fundador de <span className="font-semibold text-foreground">Yultic</span>, Yultic es una consultora de desarrollo
-                   de software enfocada en pequeñas y medianas empresas que necesitan tecnología funcional. Diseñamos y construimos
-                   soluciones tecnológicas a medida,desde automatización inteligente con IA
-                   hasta plataformas SaaS que reemplazan procesos manuales ineficientes.
+                  Anteriormente fui co-fundador de <span className="font-semibold text-foreground">Skinner</span>,
+                  una startup enfocada en optimizar los procesos del Talento Humano a través de la Inteligencia
+                  Artificial.
                 </p>
               </div>
 
               <div className="flex gap-2 sm:gap-3">
                 <Code2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent mt-1 flex-shrink-0" />
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-pretty">
-                  En este blog, compartiré mis aprendizajes, exploraciones técnicas y los desafíos de construir tecnología,
-                  desde el backend hasta la blockchain.{" "}
-                  <span className="font-semibold text-foreground">¡Bienvenido/a!</span>
+                  Ese proyecto fue mi campo de entrenamiento más sólido, donde trabajé con tecnologías full-stack
+                  robustas como <span className="font-medium text-foreground">Nest.js</span>,
+                  <span className="font-medium text-foreground"> Python</span>,
+                  <span className="font-medium text-foreground"> FastAPI</span>,
+                  <span className="font-medium text-foreground"> TypeScript</span> y
+                  <span className="font-medium text-foreground"> Prisma</span> para el backend, y
+                  <span className="font-medium text-foreground"> Next.js</span> para el frontend.
                 </p>
               </div>
             </div>
+
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-pretty">
+              En este blog compartiré mis aprendizajes, exploraciones técnicas y los desafíos de construir
+              tecnología, desde el backend hasta la blockchain.{" "}
+              <span className="font-semibold text-foreground">¡Bienvenido/a!</span>
+            </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6 justify-center md:justify-start">

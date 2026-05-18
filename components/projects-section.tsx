@@ -15,6 +15,25 @@ export function ProjectsSection() {
 
   const projects = [
     {
+      title: "MATI — Agentes como Servicio (AaaS)",
+      description:
+        "Plataforma de Agentes como Servicio (AaaS) que automatiza trámites legales y tributarios para contadores en El Salvador. Centraliza la gestión multi-tenant de clientes y empleados, genera alertas automáticas de vencimientos (ISSS, AFP, IVA, renta y contratos), un calendario de obligaciones fiscales, la generación de documentos legales y un agente de IA conversacional. Actualmente en desarrollo.",
+      tags: [
+        "NestJS",
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "BullMQ",
+        "Anthropic SDK",
+        "Turborepo",
+      ],
+      image: "maticartoon.png",
+      imageContain: true,
+      github: "https://github.com/yultic/S.I.P.A.T-/tree/main/sipatagent",
+      demo: "https://github.com/yultic",
+    },
+    {
       title: "SKINNER",
       description:
         "Software de gestión administrativa inteligente que combina IA avanzada con gestión de talento humano. Optimiza procesos administrativos y fortalece la infraestructura tecnológica de las organizaciones.",
@@ -110,7 +129,7 @@ export function ProjectsSection() {
 
           <div className="space-y-12">
             {projects.map((project, index) => {
-              const isFeature = index < 3;
+              const isFeature = index < 4;
               const isReversed = index % 2 === 1;
 
               if (isFeature) {
@@ -195,9 +214,9 @@ export function ProjectsSection() {
 
             {/* Smaller projects in grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {projects.slice(3).map((project, index) => (
+              {projects.slice(4).map((project, index) => (
                 <Card
-                  key={index + 3}
+                  key={index + 4}
                   className={`animate-on-scroll stagger-${index + 1} border-border/50 bg-card/80 backdrop-blur-sm overflow-hidden group hover:border-gold/40 transition-all duration-500`}
                 >
                   <CardHeader className="p-0">
